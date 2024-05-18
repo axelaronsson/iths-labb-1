@@ -17,12 +17,19 @@ function App() {
       },
     ]);
   };
+
+  const removeItem = (e) => {
+    setArticles(
+      articles.filter((article) => article.id.toString() !== e.target.value)
+    );
+  };
+
   return (
     <>
       <h2>Shopping list</h2>
       <div>
         <Form addEntry={addEntry} />
-        <List articles={articles} />
+        <List articles={articles} removeItem={removeItem} />
       </div>
     </>
   );
