@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Form from "./Form";
+import List from "./List";
 import "./App.css";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <h2>Shopping list</h2>
       <div>
         <Form addEntry={addEntry} />
+        <List articles={articles} />
       </div>
     </>
   );
