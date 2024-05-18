@@ -3,12 +3,24 @@ import Form from "./Form";
 import "./App.css";
 
 function App() {
+  const [articles, setArticles] = useState([]);
 
+  const addEntry = (e, value) => {
+    e.preventDefault();
+
+    setArticles([
+      ...articles,
+      {
+        id: Date.now(),
+        title: value,
+      },
+    ]);
+  };
   return (
     <>
       <h2>Shopping list</h2>
       <div>
-        <Form />
+        <Form addEntry={addEntry} />
       </div>
     </>
   );
